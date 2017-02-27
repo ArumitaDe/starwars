@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html  style="font-family:sans-serif;">
+<head>
+	<title>Index</title>
+
+
+<link rel="stylesheet" type="text/css" href="assets\css\style.css">
+</head>
+<body>
+<div class="header">
+ <h1>Arumita</h1>
+  <ul>
+     
+     <li><a class ="about" href="index.html"> About</a> </li>
+     <li><a class ="portfolio" href="portfolio.html">Portfolio</a></li> 
+     <li><a class ="contact" href="contact.html">Contact</a> </li>
+     </ul>
+   
+     
+  </div>
+ 
+  <div class="body">
+  <section class ="aboutme">
+Thank you for your interest ! 
+<hr>
+<p class = "about-me-text">
+More exciting features coming soon !
+</p>
+</section>
+<section class = "links">
+<p>Connect with me</p>
+<hr>
+<a id="linkedinimage" href="https://www.linkedin.com/in/arumita-de-777218117">
+  <img src="assets\images\linkedin.jpg" alt="linkedin" style="width:42px;height:42px;border:0;" >
+</a>  
+<a id="githubimage" href="https://github.com/ArumitaDe">
+  <img src="assets\images\github.jpg" alt="github" style="width:42px;height:42px;border:0;">
+</a> 
+<a id="stackimage" href="http://meta.stackoverflow.com/users/7437618/arumita-dey">
+  <img src="assets\images\stackoverflow.jpg" alt="stackoverflow" style="width:42px;height:42px;border:0;">
+</a> 
+</section>
+  
+  </div>
+
+
+</body>
+</html>
+

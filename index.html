@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Game</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        
+        #mainbody{background-image: url(background.png);
+         background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;        }
+        
+        img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+} 
+          body{
+    
+              background-color:yellow;}
+
+        h2{text-align: center;
+            color: blue;
+        font-size: 30px;}
+        
+        #myscore {
+   z-index: 100; float:right;color: darkcyan;
+} 
+        #enemyscore {
+   z-index: 100; float:right;color: darkcyan;
+} 
+        #wrapper1 {
+            
+  text-align: center;
+    overflow: hidden;
+            
+        }
+        
+        #topfirst,#topsecond,#topthird,#topfourth {
+           max-width: 100px;
+             float:left;
+            background-color: aqua;
+            display: inline-block;
+            margin: 10px;
+            border-color: green;
+            border-width: 10px;
+            border : 10px solid green;
+            
+            
+
+        }
+        h1{color: red;
+        background: black;
+        
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+
+       
+
+            
+       
+         #wrapper3 {
+             text-align: center;
+              width:100%;
+            height:150px;
+            overflow: hidden;
+             
+   
+        }
+        
+        #first {
+           max-width: 100px;
+            
+            background-color: aqua;
+            display: inline-block;
+            margin: 10px;
+            border : 10px solid blue;
+
+
+        }
+        
+       
+         #wrapper2 {
+             text-align: center;
+              width:100%;
+            height:150px;
+        overflow: hidden;
+   
+             
+        }
+        
+        #midfirst,#midsecond,#midthird {
+           max-width: 100px;
+             float:left;
+            background-color: aqua;
+            display: inline-block;
+            margin: 10px;
+            border : 10px solid red;
+
+
+        }
+        
+        
+         #wrapper4 {
+              width:100%;
+            height:150px;
+    overflow: hidden;
+   
+           text-align: center;  
+        }
+        
+        #bottomfirst {
+           max-width: 100px;
+             float:left;
+            background-color: aqua;
+            display: inline-block;
+            margin: 10px;
+            border : 10px solid yellow;
+
+
+        }
+        #wrapper5{
+            
+            text-align: center;
+            color: crimson;
+            text-decoration-style: wavy;
+            
+        }
+        #enemyscore{
+            
+            text-align: center;
+            color: crimson;
+            text-decoration-style: wavy;
+            border : 10px solid yellow;
+            
+        }
+         #myscore{
+            
+            text-align: center;
+            color: crimson;
+            text-decoration-style: wavy;
+            border : 10px solid yellow;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <embed src="http://www.thesoundarchive.com/starwars/star-wars-theme-song.mp3" align="baseline" border="0" width="145" height="60" autostart="false" loop="true">
+    
+    <div id= "mainbody">
+    <header><h2>Starwars Game </h2> </header>
+    <div id="wrapper1">
+
+
+        <div id="topfirst"> </div>
+
+        <div id="topsecond"></div>
+
+        <div id="topthird"> </div>
+    
+        <div id="topfourth"> </div>
+
+    </div>
+    <div id="wrapper2">
+
+
+        <div id="midfirst"> </div>
+        <div id="midsecond"> </div>
+        <div id="midthird"> </div>
+
+       
+
+    </div>
+    
+    <div id="wrapper3">
+
+  <div id="first"> </div>
+     
+
+    </div>
+    
+     <div id="wrapper4">
+
+
+        <div id="bottomfirst"> </div>
+          
+
+        
+
+    </div>
+    <div id="wrapper5"></div>
+
+<div id="myscore" ></div>
+        <div id="enemyscore" ></div>
+        
+
+    
+
+
+    <script type="text/javascript">
+       
+
+            function starWars() {
+
+            
+
+                this.myCharacter = function myCharacter() {
+                   
+
+                }
+                 this.availableEnemies = function availableEnemies() {
+                   
+
+                }
+                  this.myDefender = function myDefender() {
+                   
+
+                }
+                  this.displayEnemy = function displayEnemy(enemy) {
+                      
+                      if (enemy == "Darth_M") 
+                          var img=darthmimage;
+                      if (enemy == "Darth_S") 
+                          var img=darthsimage;
+                      if (enemy == "oBi") 
+                          var img=obimage;
+                      if (enemy == "Luke") 
+                          var img=lukeimg;
+                    
+                      this.display("#bottomfirst",img,enemy);
+                      
+
+                }
+                  this.playGame = function playGame(enemy) {
+                      
+                      $("#bottomfirst").click(function(e){enemyscore = enemyscore+15;
+                                                         myscore=myscore-15;
+                                                         $("#enemyscore").text("ENEMY SCORE " + enemyscore + "");
+                                                          $("#myscore").text("MY SCORE " + myscore + "");
+                                                          alert(a);
+                                                         if((enemyscore<=0)&&(a<3)){
+                            $("#wrapper5").text("Enemy eliminated.....click on new enemy to fight") ;}
+                                                             if((enemyscore<=0)&&(a==3)){
+                            document.body.innerHTML = '';
+                             document.body.innerHTML = '<h1>Game Over</h1>';}
+                             
+
+                              readyclick=true;
+                              $("#bottomfirst").html(" ");
+                          });
+                                                         
+                                                         if(myscore<=0){
+                                                             document.body.innerHTML = '';
+                             document.body.innerHTML = '<h1>Game Over</h1>';
+                             
+
+                              $("#first").html(" ");
+                          };
+                                              $("#first").click(function(e){
+                                                   
+                                                  enemyscore = enemyscore-15;
+                                                         myscore=myscore+15;
+                                                         $("#myscore").text("MY SCORE " + myscore + "");
+                                                        $("#enemyscore").text("ENEMY SCORE " + enemyscore + "");
+                                                                           if(enemyscore<=0)
+                          {
+                            if((enemyscore<=0)&&(a<3)){
+                            $("#wrapper5").text("Enemy eliminated.....click on new enemy to fight") ;}
+                                                             if((enemyscore<=0)&&(a==3)){
+                            document.body.innerHTML = '';
+                             document.body.innerHTML = '<h1>Game Over</h1>';}
+                               $("#enemyscore").text(" ");
+                              readyclick=true;
+                              
+                             
+                              $("#bottomfirst").html(" ");
+                          }
+});
+                      
+                }
+                  this.displayOthers = function displayOthers(enemy) {
+                      
+                    var obj1 = document.getElementById("midfirst" ).innerHTML;
+      var obj2 = document.getElementById("midsecond" ).innerHTML;
+      var obj3 = document.getElementById("midthird" ).innerHTML;
+      
+      
+      var rest1 = document.getElementById("midfirst" ).textContent;
+      var rest2 = document.getElementById("midsecond" ).textContent;
+      var rest3 = document.getElementById("midthird" ).textContent;
+     
+     
+      
+     if (rest1==enemy)
+          
+      {
+           $("#midfirst").html(obj2);
+           $("#midsecond").html(obj3);
+          
+          $("#midthird").html(" ");
+          
+         
+          readyclick=false;
+          
+          
+      }
+       if (rest2==enemy)
+          
+      {
+           $("#midfirst").html(obj1);
+           $("#midsecond").html(obj3);
+       $("#midthird").html(" ");
+         
+          readyclick=false;
+        
+           
+      }
+       if (rest3==enemy)
+          
+      {
+           $("#midfirst").html(obj1);
+           $("#midsecond").html(obj2);
+        $("#midthird").html(" ");
+          
+          readyclick=false;
+         
+         
+      }
+
+                      
+                      
+
+                }
+                  this.display = function display(id,img, warrior) {
+                      
+                      $(id).html(img + warrior);
+                   
+
+                }
+                  
+
+            }
+
+            
+        var oBi,Luke,Darth_S,Darth_M,enemy,me,enemyscore=100,myscore=100,enemyobject;
+        var obi = new starWars();
+        var luke = new starWars();
+        var darth_S = new starWars();
+        var darth_M = new starWars();
+        var a=0;
+        var lukeimg="<img src=luke.jpg height=100px width=100px>";
+        var obimage="<img src=obi.jpg height=100px width=100px>";
+        var darthsimage="<img src=darths.jpg height=100px width=100px>";
+        var darthmimage="<img src=darthm.jpg height=100px width=100px>";
+        
+        obi.display("#topfirst",obimage,"oBi");
+        luke.display("#topsecond",lukeimg,"Luke");   
+        darth_S.display("#topthird",darthsimage,"Darth_S");
+        darth_M.display("#topfourth",darthmimage,"Darth_M");
+        $( "#topfirst" ).click(function() {
+        $("#wrapper1").html("<div ></div> ");
+        obi.display("#first",obimage,"oBi");
+        luke.display("#midfirst",lukeimg,"Luke");   
+        darth_S.display("#midsecond",darthsimage,"Darth_S");
+        darth_M.display("#midthird",darthmimage,"Darth_M");
+        me=obi;});
+        $( "#topsecond" ).click(function() {
+        $("#wrapper1").html("<div >blank space</div> ");
+         obi.display("#midfirst",obimage,"oBi");
+            luke.display("#first",lukeimg,"Luke");   
+        darth_S.display("#midsecond",darthsimage,"Darth_S");
+        darth_M.display("#midthird",darthmimage,"Darth_M");
+        me=luke;});
+        $( "#topthird" ).click(function() {
+        $("#wrapper1").html("<div >blank space</div> ");
+         obi.display("#midfirst",obimage,"oBi");
+        luke.display("#midsecond",lukeimg,"Luke"); 
+             darth_S.display("#first",darthsimage,"Darth_S");
+        darth_M.display("#midthird",darthmimage,"Darth_M");
+            me=darth_S;
+        
+        });
+        $( "#topfourth" ).click(function() {
+        $("#wrapper1").html("<div >blank space</div> ");
+        obi.display("#midfirst",obimage,"oBi");
+        luke.display("#midsecond",lukeimg,"Luke");   
+        darth_S.display("#midthird",darthsimage,"Darth_S");
+         darth_M.display("#first",darthmimage,"Darth_M");            
+        me=darth_M;
+        
+        
+        });
+       /* $( "#midfirst" ).click(function() {
+       
+        });
+       $("#wrapper2 div img ").click(function(){
+           var k1 = $("#wrapper2 div").html();
+           alert(k1);}); */
+    var readyclick=true;    
+       
+  $("#wrapper2 div").click(function(e) {
+      
+     if (readyclick===true) {
+         a=a+1;
+   $("#wrapper5").text(" ") ;
+          enemyscore=100;
+//document.getElementById("myParagraph").innerHTML;
+     $("#enemyscore").text("ENEMY SCORE " + enemyscore + "");   
+         $("#myscore").text("MY SCORE " + myscore + "");
+    
+      enemy=document.getElementById($(this).attr('id')).textContent;
+     
+         
+         if(enemy==oBi)enemyobject=obi;
+         if(enemy==Luke)enemyobject=luke;
+         if(enemy==Darth_S)enemyobject=darth_S;
+         if(enemy==Darth_M)enemyobject=darth_M;
+      
+      me.displayEnemy(enemy);
+      me.displayOthers(enemy);
+        
+      me.playGame(enemy); 
+   
+}});
+           /*switch(k1) {
+    case 0:
+        code block=
+        break;
+    case 1:
+        code block
+        break;
+    case 2:
+        code block
+} 
+       });
+      /*  var el1 = document.getElementById('container1');
+        var el2 = document.getElementById('container2');
+        if (el1 && el2) {
+        while (el2.firstChild) el1.appendChild(el2.firstChild);
+        }
+        
+
+// Remove el2 if required
+        el2.parentNode.removeChild(el2);
+     var test = document.getElementById("test");
+
+        function whatClicked(evt) {
+        alert(evt.target.id);
+}
+
+test.addEventListener("click", whatClicked, false);*/           
+                    
+    </script>
+
+</div>
+
+</body>
+
+</html>
